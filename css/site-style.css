@@ -1,6 +1,14 @@
 * {
-    font-family: 'Garamond';
+    font-family: 'Cormorant Garamond', serif;
     font-size: 105%;
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+}
+
+.navbar-collapse {
+    font-weight: bold;
 }
 
 body {
@@ -9,14 +17,7 @@ body {
     background-size: cover;
 }
 
-.navbar-brand {
-    font-weight: bold;
-}
-
-.nav, .navbar-brand{
-    font-size: 20px;
-}
-
+/*if screen is big enough, pad the left side of the navbar*/
 @media (min-width: 970px) {
     .navbar-brand {
         padding-left: 70%;
