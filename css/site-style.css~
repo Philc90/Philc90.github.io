@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("../images/532.JPG");
+    background-image: url("../images/532.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
