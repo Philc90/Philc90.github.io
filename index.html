@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Next line is necessary for the navbar to correctly collapse on mobile -->
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
     <meta charset="UTF-8">
     <title>Philip Chiang's Homepage</title>
@@ -23,13 +24,13 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                <a class="navbar-brand" href="./index.html">Philip Chiang</a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="./index.html">Philip Chiang</a>
             </div><!-- /.navbar-header -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,9 +52,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
             </div>
-            <div id="mid" class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
+            <div id="mid" class="col-xs-10 col-sm-8 col-md-6 col-lg-6 plate">
                 <h1 class="text-center">Philip Chiang</h1>
                 <img src="./images/index.PNG" id="profile-pic" class="img-responsive img-thumbnail center-block">
                 <h2 class="text-center">About me</h2>
@@ -62,8 +63,12 @@
                 <p class="text-center">I am currently interested in improving my knowledge of Python by working through <a href="https://www.nostarch.com/automatestuff/">"Automate the Boring Stuff with Python"</a> and learning Flask to run this website in the future if I decide to host it on my own web server.</p>
                 <p class="text-center"><a href="./game-of-life.html">A web version of Conway's Game of Life, using HTML5 canvas.</a></p>
             </div>
-            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
             </div>
+        </div>
+        <div id="footer" class="row"> 
+            <p class="text-center">&copy;Philip Chiang 2016</p>
+            <p class="text-center">Hosted on <a href="https://pages.github.com/">Github Pages</a></p>
         </div>
     </div>
 </body>

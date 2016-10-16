@@ -7,6 +7,13 @@
     font-family: 'Lobster', cursive;
 }
 
+/*if screen is big enough, add padding on the left side of the navbar to look nicer*/
+@media (min-width: 970px) {
+    .navbar-brand {
+        padding-left: 70%;
+    }
+}
+
 .navbar-collapse {
     font-weight: bold;
 }
@@ -17,9 +24,12 @@ body {
     background-size: cover;
 }
 
-/*if screen is big enough, pad the left side of the navbar*/
-@media (min-width: 970px) {
-    .navbar-brand {
-        padding-left: 70%;
-    }
+div.plate {
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px DarkSlateGray;
+}
+
+#footer {
+    margin-top: 10px;
+    background-color: white;
 }

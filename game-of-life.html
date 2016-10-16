@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Next line is necessary for the navbar to correctly collapse on mobile -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
     <meta charset="UTF-8">
     <title>Phil's Conway's Game of Life</title>
     <!-- Latest compiled and minified CSS -->
@@ -58,37 +60,45 @@
     <br>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
             </div>
-            <div id="mid" class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
-                <form action="" id="cell-size-radio">
-                    <fieldset>
-                        <legend>Change cell size</legend>
-                        <p>
-                            <input type="radio" name="cell-size" id="size-5" value="5"><label for="size-5">5px</label>
-                        </p>
-                        <p>
-                            <input type="radio" name="cell-size" id="size-10" value="10" checked><label for="size-10">10px</label>
-                        </p>
-                    </fieldset>
-                </form>
-                <h2>Ideas for improvement</h2>
-                <ul>
-                    <li>spawning
-                        <ul>
-                            <li>clicking to make a cell live</li>
-                            <li>ability to spawn pattern through drop-down menu</li>
-                            <li>ability to spawn pattern by clicking</li>
-                            <li>image of pattern replaces cursor if you select that pattern</li>
-                        </ul>
-                    </li>
-                    <li>pause and play</li>
-                    <li>clear world</li>
-                    <li>reinit world with random population</li>
-                </ul>
+            <div id="mid" class="col-xs-10 col-sm-8 col-md-6 col-lg-6">
+                <div class="plate">
+                    <form action="" id="cell-size-radio">
+                        <fieldset>
+                            <legend>Change cell size</legend>
+                            <p>
+                                <input type="radio" name="cell-size" id="size-5" value="5"><label for="size-5">5px</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="cell-size" id="size-10" value="10" checked><label for="size-10">10px</label>
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="plate">
+                    <h2>Ideas for improvement</h2>
+                    <ul>
+                        <li>spawning
+                            <ul>
+                                <li>clicking to make a cell live</li>
+                                <li>ability to spawn pattern through drop-down menu</li>
+                                <li>ability to spawn pattern by clicking</li>
+                                <li>image of pattern replaces cursor if you select that pattern</li>
+                            </ul>
+                        </li>
+                        <li>pause and play</li>
+                        <li>clear world</li>
+                        <li>reinit world with random population</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3">
             </div>
+        </div>
+        <div id="footer" class="row"> 
+            <p class="text-center">&copy;Philip Chiang 2016</p>
+            <p class="text-center">Hosted on <a href="https://pages.github.com/">Github Pages</a></p>
         </div>
     </div>
 

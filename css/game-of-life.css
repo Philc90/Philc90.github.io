@@ -13,7 +13,6 @@ h1 {
     font-family: 'Cormorant Garamond', serif;
 }
 
-#mid>form, #mid>h2, #mid>ul, #mid>ul>li {
-    color: black;
+.plate {
     background-color: white;
 }
