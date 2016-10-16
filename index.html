@@ -5,10 +5,8 @@
     <title>Philip Chiang's Homepage</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="./css/site-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
     <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -16,20 +14,54 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-
+    <script src="./js/site-js.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">Philip Chiang</a>
+            </div><!-- /.navbar-header -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="./index.html">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./game-of-life.html">Game of Life</a></li>
+                            <li><a href="http://suggestme.info">Suggest Me (with CoderWatch)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/Philc90">Github</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav><!-- /.navbar-default -->
+
     <div class="container-fluid">
         <div class="row">
-            <h1 class="text-center">Philip Chiang</h1>
-            <img src="./images/index.jpg" class="img-responsive center-block">
-            <h2 class="text-center">About me</h2>
-            <p class="text-center">I am currently a Computer Science major at Cal Poly Pomona, expected graduation Spring 2017.</p>
-            <h2 class="text-center">Projects</h2>
-            <p class="text-center">I am currently interested in improving my knowledge of Python by working through <a href="https://www.nostarch.com/automatestuff/">"Automate the Boring Stuff with Python"</a> and using Flask to run this website.</p>
-            <a href="./game-of-life.html"><p class="text-center">A web version of Conway's Game of Life, using HTML5 canvas.</p></a>
+            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            </div>
+            <div id="mid" class="col-xs-8 col-sm-8 col-md-6 col-lg-6">
+                <h1 class="text-center">Philip Chiang</h1>
+                <img src="./images/index.png" id="profile-pic" class="img-responsive img-thumbnail center-block">
+                <h2 class="text-center">About me</h2>
+                <p class="text-center">Hi. My name is Philip Chiang and I am currently enrolled in the Computer Science, B.S. program at Cal Poly Pomona. I expect to graduate in 2017. I established this website as a place to show what I am currently working on, talk about my past projects, and practice my web development skills.</p>
+                <h2 class="text-center">Projects</h2>
+                <p class="text-center">I am currently interested in improving my knowledge of Python by working through <a href="https://www.nostarch.com/automatestuff/">"Automate the Boring Stuff with Python"</a> and learning Flask to run this website in the future if I decide to host it on my own web server.</p>
+                <p class="text-center"><a href="./game-of-life.html">A web version of Conway's Game of Life, using HTML5 canvas.</a></p>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+            </div>
         </div>
     </div>
 </body>

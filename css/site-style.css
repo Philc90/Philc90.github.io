@@ -1,0 +1,24 @@
+* {
+    font-family: 'Garamond';
+    font-size: 105%;
+}
+
+body {
+    background-image: url("../images/532.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav, .navbar-brand{
+    font-size: 20px;
+}
+
+@media (min-width: 970px) {
+    .navbar-brand {
+        padding-left: 70%;
+    }
+}

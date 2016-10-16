@@ -8,8 +8,9 @@ var world = [], row;
 initRandWorld();
 // initWorldWithBlinker();
 
-var timerID = window.setInterval(drawWorld, 100);
+var timerID = setInterval(drawWorld, 100);
 
+// Initializes a random world with ~half of the cells living
 function initRandWorld() {
     ctx.fillStyle = "black";
     for(var x = 0; x < CANVAS_WIDTH; x+=CELL_SIZE) {
@@ -51,6 +52,7 @@ function initWorldWithBlinker() {
     world[1][3] = 1;
 }
 
+// Draws grid lines on the canvas
 function drawGrid() {
     ctx.strokeStyle = "green";
     for(var x = 0; x < CANVAS_WIDTH; x+=CELL_SIZE) {
@@ -67,6 +69,7 @@ function drawGrid() {
     }
 }
 
+// Performs Game Of Life logic to compute the next state of the world
 function step() {
     var newWorld = [];
     for(var i = 0; i < world.length; i++)
@@ -91,27 +94,14 @@ function step() {
     world = newWorld;
 }
 
+// Returns the number of living neighbors of the cell at [x,y]
 function numOfNeighbors(x,y) {
-    // var neighbors = [
-    //     [x - CELL_SIZE, y - CELL_SIZE], [x, y - CELL_SIZE], [x + CELL_SIZE, y - CELL_SIZE],
-    //     [x - CELL_SIZE, y], [x + CELL_SIZE, y],
-    //     [x - CELL_SIZE, y + CELL_SIZE], [x, y + CELL_SIZE], [x + CELL_SIZE, y + CELL_SIZE]
-    // ];
-    // var neighbors = [
-    //     world[x-1][y-1], world[x][y-1], world[x+1][y-1],
-    //     world[x-1][y], world[x+1][y],
-    //     world[x-1][y+1], world[x][y+1], world[x+1][y+1]
-    // ];
-    
     var numOfNeighbors = 0;
 
     for(var i = x-1; i <= x+1; i++) {
         for(var j = y-1; j <= y+1; j++) {
             if(i >= 0 && j >= 0 && i < world.length && j < world[i].length) {
-                if(i == x && j == y) {
-                    // do nothing if itself
-                }
-                else if(world[i][j] == 1) {
+                if(world[i][j] == 1 && !(i == x && j == y)) {
                     // console.log(x + ',' + y + 'has neighbor (' + i + ',' + j + ')');
                     numOfNeighbors++;
                 }
@@ -123,8 +113,7 @@ function numOfNeighbors(x,y) {
     return numOfNeighbors;
 }
 
-
-
+// Draws the world and computes the next step
 function drawWorld() {
     for(var i = 0; i < world.length; i++) {
         for(var j = 0; j < world[i].length; j++) {
@@ -151,4 +140,16 @@ $('#canvas').click(function() {
     // else {
     //     timerID = window.setInterval(drawWorld, 500);
     // }
+});
+
+$('#cell-size-radio').click(function() {
+    var selection = $('#cell-size-radio').serializeArray();
+    if(selection != []) {
+        console.log(selection);
+        CELL_SIZE = Number(selection[0].value);
+        world=[];
+        initRandWorld();
+        clearInterval(timerID);
+        timerID = setInterval(drawWorld, 100);
+    }
 });
