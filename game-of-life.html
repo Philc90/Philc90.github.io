@@ -53,7 +53,7 @@
     <h1 class="text-center">Phil's Conway's Game of Life</h1>
     <br>
     <div id="canvas-container">
-        <canvas id="canvas" width="1200" height="500">
+        <canvas id="canvas">
             Your browser does not support the HTML5 canvas tag.
         </canvas>
     </div>
@@ -71,7 +71,7 @@
                                 <input type="radio" name="cell-size" id="size-5" value="5"><label for="size-5">5px</label>
                             </p>
                             <p>
-                                <input type="radio" name="cell-size" id="size-10" value="10" checked><label for="size-10">10px</label>
+                                <input type="radio" name="cell-size" id="size-10" value="10"><label for="size-10">10px</label>
                             </p>
                         </fieldset>
                     </form>
@@ -90,6 +90,7 @@
                         <li>pause and play</li>
                         <li>clear world</li>
                         <li>reinit world with random population</li>
+                        <li>fake an infinte plane by having the world extend a bit beyond the visible boundaries</li>
                     </ul>
                 </div>
             </div>

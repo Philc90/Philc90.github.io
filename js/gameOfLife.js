@@ -1,15 +1,68 @@
-var CELL_SIZE = 10, 
-    CANVAS_WIDTH = document.getElementById('canvas').getAttribute('width'), 
-    CANVAS_HEIGHT = document.getElementById('canvas').getAttribute('height');
+var CELL_SIZE = 0,
+    // CANVAS_WIDTH = document.getElementById('canvas').getAttribute('width'), 
+    // CANVAS_HEIGHT = document.getElementById('canvas').getAttribute('height');
+    CANVAS_HEIGHT = 0,
+    CANVAS_WIDTH = 0;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext("2d");
 var world = [], row;
 
-initRandWorld();
-// initWorldWithBlinker();
+$(document).ready(function() {
+    var windowWidth = $(window).width();
+    var $radio = $('input:radio[name=cell-size]');
+    if(windowWidth < 350) {
+        document.getElementById('canvas').setAttribute('width', '280px');
+        document.getElementById('canvas').setAttribute('height', '280px');
+        CANVAS_WIDTH = 280;
+        CANVAS_HEIGHT = 280;
+        if($radio.is(':checked') === false) {
+            $radio.filter('[value=5]').prop('checked', true);
+        }
+    } else if(windowWidth < 750) {
+        document.getElementById('canvas').setAttribute('width', '600px');
+        document.getElementById('canvas').setAttribute('height', '480px');
+        CANVAS_WIDTH = 700;
+        CANVAS_HEIGHT = 480;
+        var $radio = $('input:radio[name=cell-size]');
+        if($radio.is(':checked') === false) {
+            $radio.filter('[value=5]').prop('checked', true);
+        }
+    } else {
+        document.getElementById('canvas').setAttribute('width', '1000px');
+        document.getElementById('canvas').setAttribute('height', '500px');
+        CANVAS_WIDTH = 1000;
+        CANVAS_HEIGHT = 500;
+        var $radio = $('input:radio[name=cell-size]');
+        if($radio.is(':checked') === false) {
+            $radio.filter('[value=5]').prop('checked', true);
+        }
+    }
+    CELL_SIZE = parseInt($('input[name=cell-size]:checked').val());
+    initRandWorld();
+    var timerID = setInterval(drawWorld, 100);
 
-var timerID = setInterval(drawWorld, 100);
+    $('#canvas').click(function() {
+        // console.log('clicked: ' + timerID);
+        // if(timerID > 0) {
+        //     window.clearInterval(timerID);
+        // }
+        // else {
+        //     timerID = window.setInterval(drawWorld, 500);
+        // }
+    });
 
+    $('#cell-size-radio').click(function() {
+        var selection = $('#cell-size-radio').serializeArray();
+        if(selection != []) {
+            console.log(selection);
+            CELL_SIZE = Number(selection[0].value);
+            world=[];
+            initRandWorld();
+            clearInterval(timerID);
+            timerID = setInterval(drawWorld, 100);
+        }
+    });
+});
 // Initializes a random world with ~half of the cells living
 function initRandWorld() {
     ctx.fillStyle = "black";
@@ -30,7 +83,7 @@ function initRandWorld() {
             row.push(cellStatus);
         }
         world.push(row);
-        // console.log(row.length);
+        console.log(row.length);
     }
     // ctx.fillStyle = "blue";
     // ctx.fillRect(10,20,CELL_SIZE,CELL_SIZE);
@@ -131,25 +184,3 @@ function drawWorld() {
     step();
 }
 
-
-$('#canvas').click(function() {
-    // console.log('clicked: ' + timerID);
-    // if(timerID > 0) {
-    //     window.clearInterval(timerID);
-    // }
-    // else {
-    //     timerID = window.setInterval(drawWorld, 500);
-    // }
-});
-
-$('#cell-size-radio').click(function() {
-    var selection = $('#cell-size-radio').serializeArray();
-    if(selection != []) {
-        console.log(selection);
-        CELL_SIZE = Number(selection[0].value);
-        world=[];
-        initRandWorld();
-        clearInterval(timerID);
-        timerID = setInterval(drawWorld, 100);
-    }
-});
